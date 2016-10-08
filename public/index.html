@@ -31,9 +31,15 @@
                     <tr data-ng-repeat="player in mvdserver.players" class="player">
                         <td class="ping">{{player.ping}}</td>
                         <td class="pl">{{player.pl}}</td>
-                        <td class="frags">{{player.frags}}</td>
+						<td class="frags">
+							<div style="background: linear-gradient({{player.topcolor}} 50%, {{player.bottomcolor}} 50%);">
+								{{player.frags}}
+							</div>
+						</td>
                         <td class="team">{{player.team}}</td>
-                        <td class="name">{{player.name}}</td>
+                        <td class="name">
+							{{player.name}}
+						</td>
                     </tr>
                 </table>
                 <div class="observers">{{mvdserver.observercount}} Observers</div>

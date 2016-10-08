@@ -85,8 +85,26 @@ function Update()
                         player['frags'] = playernode.getElementsByTagName('frags')[0].textContent;
                         player['ping'] = playernode.getElementsByTagName('ping')[0].textContent;
                         player['pl'] = playernode.getElementsByTagName('pl')[0].textContent;
-                        player['topcolor'] = playernode.getElementsByTagName('topcolor')[0].textContent;
-                        player['bottomcolor'] = playernode.getElementsByTagName('bottomcolor')[0].textContent;
+
+						var colors = [
+							'#ffffff', // 0
+							'#00ff00', // 1
+							'#ffffff', // 2
+							'#00ff00', // 3
+							'#ee0000', // 4 (red)
+							'#0033cc', // 5
+							'#aabbcc', // 6
+							'#07ee88', // 7
+							'#ffff00', // 8
+							'#00ffff', // 9
+							'#44ff77', // 10
+							'#ccbbaa', // 11
+							'#bbbbbb', // 12
+							'#0000ff'  // 13
+						];
+
+                        player['topcolor'] = colors[parseInt(playernode.getElementsByTagName('topcolor')[0].textContent)];
+                        player['bottomcolor'] = colors[parseInt(playernode.getElementsByTagName('bottomcolor')[0].textContent)];
                         players.push(player);
                     }
                     mvdserver['players'] = players;
